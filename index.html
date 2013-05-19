@@ -177,7 +177,6 @@ function boldText( $elem , text , toggle ){
       $p = $elem.closest('div') ,
       $pre = $('pre',$p) ,
       toggle = ( typeof toggle=="undefined" ? true : toggle );
-  console.log( $pre );
   $pre
     .html( $pre.html().replace( ( toggle ? text : "<strong>" + text + "</strong>" ) , ( toggle ? "<strong>" + text + "</strong>" : text ) ) );
 }
