@@ -46,23 +46,26 @@
 
         switch( typeof handlerIn ){
             case "object" :
-                settings = $.extend(settings, handlerIn );
+                settings = $.extend(defaults, handlerIn );
                 break;
             case "function" :
-                settings = $.extend(settings, { mouseenter: handlerIn } );
+                settings = $.extend(defaults, { mouseenter: handlerIn } );
                 break;
         }
         switch( typeof handlerOut ){
             case "function" :
-                settings = $.extend(settings, { mouseleave: handlerOut } );
+                settings = $.extend(defaults, { mouseleave: handlerOut } );
                 break;
             case "string" :
             case "object" :
-                settings = $.extend(settings, { mouseleave: handlerIn, selector: handlerOut } );
+                settings = $.extend(defaults, { mouseleave: handlerIn, selector: handlerOut } );
         }
         if( typeof selector ){
-            settings = $.extend(settings, { selector: selector } );
+            settings = $.extend(defaults, { selector: selector } );
         }
+        
+        console.log( this );
+        console.log( settings );
 
         // instantiate variables
         // cX, cY = current X and Y position of mouse, updated by mousemove event
